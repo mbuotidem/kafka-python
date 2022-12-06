@@ -870,7 +870,7 @@ class KafkaClient(object):
         Returns: a map of dict mapping {api_key : (min_version, max_version)},
         or None if ApiVersion is not supported by the kafka cluster.
         """
-        return {3:(1,10)}
+        return self._api_versions
 
     def check_version(self, node_id=None, timeout=2, strict=False):
         """Attempt to guess the version of a Kafka broker.
