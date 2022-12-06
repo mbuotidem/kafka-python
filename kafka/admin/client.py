@@ -212,8 +212,6 @@ class KafkaAdminClient(object):
             metric_group_prefix='admin',
             **self.config
         )
-        self._client.check_version(timeout=(self.config['api_version_auto_timeout_ms'] / 1000))
-
         # Get auto-discovered version from client if necessary
         if self.config['api_version'] is None:
             self.config['api_version'] = self._client.config['api_version']
